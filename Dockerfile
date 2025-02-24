@@ -21,6 +21,6 @@ COPY . .
 
 EXPOSE 8000
 
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENV PATH=$PATH:/app/.venv/bin
 
 CMD [ "uvicorn", "cc_compose.server:app", "--reload", "--host", "0.0.0.0", "--port", "8000" ]
