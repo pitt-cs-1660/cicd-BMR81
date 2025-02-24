@@ -74,7 +74,7 @@ jobs:
        id: auth
        name: Authenticate to GCP
        with:
-         project_id: 'cs1660-project2' # update with your project ID
+         project_id: 'theta-bliss-451923-u7' # update with your project ID
          workload_identity_provider: 'projects/1027178945150/locations/global/workloadIdentityPools/github/providers/my-repo' # update with your Workload Identity Pool
 
 #      # configure/login with docker
