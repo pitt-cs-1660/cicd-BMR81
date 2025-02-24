@@ -2,7 +2,9 @@ FROM python:3.11-buster AS builder
 
 WORKDIR /app
 
-pip install --upgrade pip && pip install poetry
+COPY . .
+
+RUN pip install --upgrade pip && pip install poetry
 
 RUN poetry config virtualenvs.create false \
 && poetry install --no-root --no-interaction --no-ansi
