@@ -23,6 +23,9 @@ services:
     ports: 
       - "8000:8000"
 
+    volumes:
+      - ./cc_compose:/app/cc_compose:Z
+      - ./static:/app/static:Z
     stdin_open: true
     tty: true
 
@@ -34,9 +37,7 @@ services:
       timeout: 5s
       retries: 5
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgrespassword
-      POSTGRES_DB: tasksdb
+      - DATABASE_URL=postgresql://postgres:postgrespassword@postgres:5432/tasksdb
     volumes:
       - pgdata:/var/lib/postgresql/data
 
